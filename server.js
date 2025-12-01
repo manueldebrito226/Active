@@ -83,22 +83,6 @@ Comentário: ${Comentarios}`
   }
 });
 
-// ✅ ROTA DE TESTE DO EMAIL
-app.get("/test-email", async (req, res) => {
-  try {
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
-      subject: "Teste Render",
-      text: "Se esse email chegou, então o Render está OK!"
-    });
-    res.send("✅ Email enviado com sucesso!");
-  } catch (err) {
-    console.log("❌ ERRO AO ENVIAR:", err);
-    res.send("❌ Falha ao enviar email");
-  }
-});
-
 // ✅ SERVIDOR PRONTO PARA O RENDER
 app.listen(PORT, () => {
   console.log("Servidor rodando em" + PORT);
