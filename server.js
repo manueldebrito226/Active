@@ -6,6 +6,7 @@ const nodemailer = require("nodemailer");
 const app = express();
 const PORT = process.env.PORT || 10000;
 
+
 // ✅ PERMITE RECEBER JSON DO FETCH
 app.use(express.json());
 
@@ -100,5 +101,5 @@ app.get("/test-email", async (req, res) => {
 
 // ✅ SERVIDOR PRONTO PARA O RENDER
 app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+  console.log("Servidor rodando em" + PORT);
 });
